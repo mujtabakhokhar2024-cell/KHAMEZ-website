@@ -12,8 +12,8 @@ body {
 }
 
 h1 {
-  margin-top: 100px;
-  font-size: 60px;
+  margin-top: 80px;
+  font-size: 70px;
   letter-spacing: 10px;
   color: gold;
 }
@@ -25,15 +25,18 @@ p {
 
 .product {
   margin-top: 50px;
+  padding: 20px;
 }
 
 button {
   background: gold;
   border: none;
   padding: 12px 20px;
-  margin-top: 10px;
   cursor: pointer;
   font-weight: bold;
+}
+button:hover {
+  background: white;
 }
 </style>
 </head>
@@ -45,9 +48,20 @@ button {
 
 <div class="product">
   <h2>KHAMEZ NOIR</h2>
-  <p>Dark | Woody | Luxury</p>
+  <p>Dark | Woody | Luxury Perfume</p>
   <p>$120</p>
-  <button onclick="window.location.href='https://buy.stripe.com/YOUR-LINK'">
+
+  <button onclick="window.open('https://buy.stripe.com/YOUR-LINK','_blank')">
+    Buy Now
+  </button>
+</div>
+
+<div class="product">
+  <h2>KHAMEZ OUD</h2>
+  <p>Rich | Oriental | Premium</p>
+  <p>$140</p>
+
+  <button onclick="window.open('https://buy.stripe.com/YOUR-LINK','_blank')">
     Buy Now
   </button>
 </div>
