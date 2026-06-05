@@ -1,42 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KHAMEZ</title>
+
 <style>
 body {
   margin: 0;
-  font-family: Arial;
-  background: black;
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle, #111, #000);
   color: white;
   text-align: center;
 }
 
+/* HERO */
 h1 {
-  margin-top: 80px;
-  font-size: 70px;
-  letter-spacing: 10px;
+  margin-top: 60px;
+  font-size: 80px;
+  letter-spacing: 12px;
   color: gold;
 }
 
-p {
+.tagline {
   font-size: 18px;
   opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+/* PRODUCTS */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
 }
 
 .product {
-  margin-top: 50px;
+  background: rgba(255,255,255,0.05);
+  width: 280px;
   padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(255,215,0,0.15);
+  transition: 0.3s;
+}
+
+.product:hover {
+  transform: scale(1.05);
+}
+
+.product img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.price {
+  color: gold;
+  font-size: 18px;
+  margin: 10px 0;
 }
 
 button {
   background: gold;
   border: none;
-  padding: 12px 20px;
-  cursor: pointer;
+  padding: 10px 15px;
   font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
 }
+
 button:hover {
   background: white;
+  color: black;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 50px;
+  padding: 20px;
+  opacity: 0.6;
 }
 </style>
 </head>
@@ -44,27 +87,37 @@ button:hover {
 <body>
 
 <h1>KHAMEZ</h1>
-<p>Unveil Your Darkness with KHAMEZ</p>
+<p class="tagline">Unveil Your Darkness with KHAMEZ</p>
 
-<div class="product">
-  <h2>KHAMEZ NOIR</h2>
-  <p>Dark | Woody | Luxury Perfume</p>
-  <p>$120</p>
+<div class="container">
 
-  <button onclick="window.open('https://buy.stripe.com/YOUR-LINK','_blank')">
-    Buy Now
-  </button>
+  <!-- PRODUCT 1 -->
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539" alt="Noir">
+    <h2>KHAMEZ NOIR</h2>
+    <p>Dark | Woody | Luxury</p>
+    <p class="price">Rs. 12,000</p>
+    <button onclick="window.open('https://buy.stripe.com/YOUR-LINK','_blank')">
+      Buy Now
+    </button>
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product">
+    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f" alt="Oud">
+    <h2>KHAMEZ OUD</h2>
+    <p>Oriental | Rich | Premium</p>
+    <p class="price">Rs. 15,000</p>
+    <button onclick="window.open('https://buy.stripe.com/YOUR-LINK','_blank')">
+      Buy Now
+    </button>
+  </div>
+
 </div>
 
-<div class="product">
-  <h2>KHAMEZ OUD</h2>
-  <p>Rich | Oriental | Premium</p>
-  <p>$140</p>
-
-  <button onclick="window.open('https://buy.stripe.com/YOUR-LINK','_blank')">
-    Buy Now
-  </button>
-</div>
+<footer>
+© 2026 KHAMEZ. All rights reserved.
+</footer>
 
 </body>
 </html>
