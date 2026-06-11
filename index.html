@@ -32,15 +32,13 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            /* Using your high-end textured background from image_4.png */
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(6, 6, 6, 1)), url('image_4.png');
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(6, 6, 6, 1)), url('images/image_4.png');
             background-size: cover;
             background-position: center;
             padding: 0 20px;
             position: relative;
         }
 
-        /* Elegantly sized centered logo presentation */
         .hero-logo {
             max-width: clamp(200px, 40vw, 350px);
             height: auto;
@@ -62,7 +60,6 @@
             animation: fadeIn 2.5s ease-in-out;
         }
 
-        /* Luxury Button Interaction */
         .btn {
             padding: 16px 45px;
             border: 2px solid var(--accent-gold);
@@ -84,7 +81,6 @@
             transform: translateY(-2px);
         }
 
-        /* Products Presentation Grid */
         section {
             padding: 120px 5%;
             max-width: 1200px;
@@ -107,7 +103,6 @@
             gap: 50px;
         }
 
-        /* Ultra-Premium Card Frame */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -123,12 +118,10 @@
             border-color: var(--accent-gold);
         }
 
-        /* Customized mood ambient lighting reflections on hover matching watermarked_img_5187771057806093530.png */
         .card.smoke-card:hover { box-shadow: 0 20px 45px rgba(255, 255, 255, 0.03); }
         .card.secret-card:hover { box-shadow: 0 20px 45px rgba(223, 183, 108, 0.08); }
         .card.eternity-card:hover { box-shadow: 0 20px 45px rgba(28, 77, 147, 0.15); }
 
-        /* Product Image Presentation Container */
         .image-wrapper {
             width: 100%;
             height: 440px;
@@ -149,7 +142,6 @@
             transform: scale(1.03);
         }
 
-        /* Card Text and Typography Content */
         .card-content {
             padding: 35px 30px;
             display: flex;
@@ -186,7 +178,6 @@
             letter-spacing: 1px;
         }
 
-        /* Luxury Call to Action Box Layout */
         .buy {
             display: block;
             text-align: center;
@@ -215,7 +206,6 @@
             box-shadow: 0 4px 20px rgba(255,255,255,0.2) !important;
         }
 
-        /* Premium Minimalist Footer Framework */
         footer {
             padding: 100px 20px;
             text-align: center;
@@ -245,7 +235,6 @@
             color: var(--accent-gold);
         }
 
-        /* Fluid Presentation Animation Framework */
         @keyframes fadeInDown {
             from { opacity: 0; transform: translateY(-30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -260,23 +249,22 @@
 
 <body>
 
-    <!-- Hero Showcase Header Box using image_4.png -->
+    <!-- Header containing image_4.png located inside an images/ folder -->
     <header>
-        <img src="image_4.png" alt="KHAMEZ Logo Graphic" class="hero-logo">
+        <img src="images/image_4.png" alt="KHAMEZ Logo Graphic" class="hero-logo">
         <p>Unveil Your Darkness</p>
         <button class="btn" onclick="document.getElementById('products').scrollIntoView()">Explore Collection</button>
     </header>
 
-    <!-- Main Dynamic Collection Catalog Section -->
     <section id="products">
         <h2 class="section-title">Our Collection</h2>
 
         <div class="products">
 
-            <!-- Card 1: Smoke (Image Reference: image.png) -->
+            <!-- Card 1: Smoke (Image Reference: images/image.png) -->
             <div class="card smoke-card">
                 <div class="image-wrapper">
-                    <img src="image.png" alt="Smoke By KHAMEZ">
+                    <img src="images/image.png" alt="Smoke By KHAMEZ">
                 </div>
                 <div class="card-content">
                     <div>
@@ -288,10 +276,10 @@
                 </div>
             </div>
 
-            <!-- Card 2: Secret (Image Reference: image_3.png) -->
+            <!-- Card 2: Secret (Image Reference: images/image_3.png) -->
             <div class="card secret-card">
                 <div class="image-wrapper">
-                    <img src="image_3.png" alt="Secret By KHAMEZ">
+                    <img src="images/image_3.png" alt="Secret By KHAMEZ">
                 </div>
                 <div class="card-content">
                     <div>
@@ -303,10 +291,10 @@
                 </div>
             </div>
 
-            <!-- Card 3: Eternity (Image Reference: image_2.png) -->
+            <!-- Card 3: Eternity (Image Reference: images/image_2.png) -->
             <div class="card eternity-card">
                 <div class="image-wrapper">
-                    <img src="image_2.png" alt="Eternity By KHAMEZ">
+                    <img src="images/image_2.png" alt="Eternity By KHAMEZ">
                 </div>
                 <div class="card-content">
                     <div>
@@ -321,7 +309,6 @@
         </div>
     </section>
 
-    <!-- Brand Footer Platform -->
     <footer>
         <p class="footer-story">Luxury. Darkness. Identity.</p>
         <a href="https://instagram.com/khamez_house" target="_blank" class="footer-social">Follow us: @khamez_house</a>
