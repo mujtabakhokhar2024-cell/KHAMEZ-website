@@ -7,12 +7,13 @@
 
     <style>
         :root {
-            --bg-color: #060606;
-            --card-bg: #111111;
+            --bg-color: #030303;
+            --card-bg: #0b0b0b;
             --accent-gold: #dfb76c;
             --text-main: #ffffff;
-            --text-muted: #999999;
-            --border-color: #222222;
+            --text-muted: #aaaaaa;
+            --border-color: #1a1a1a;
+            --spacing-lg: 140px;
         }
 
         body {
@@ -22,9 +23,10 @@
             color: var(--text-main);
             scroll-behavior: smooth;
             -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.5px;
         }
 
-        /* Premium Leather Background Header Layer */
+        /* Cinematic Hero Header */
         header {
             height: 100vh;
             display: flex;
@@ -32,231 +34,262 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(6, 6, 6, 1)), url('image_4.png');
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(3, 3, 3, 1)), url('image_4.png');
             background-size: cover;
             background-position: center;
-            padding: 0 20px;
+            padding: 0 24px;
             position: relative;
+            overflow: hidden;
         }
 
         .hero-logo {
-            max-width: clamp(200px, 40vw, 350px);
+            max-width: clamp(220px, 45vw, 380px);
             height: auto;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             object-fit: contain;
-            filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8));
-            animation: fadeInDown 1.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+            filter: drop-shadow(0 15px 35px rgba(0,0,0,0.9));
+            animation: fadeInUp 1.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         header p {
-            color: #e5e5e5;
-            max-width: 600px;
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            color: #f0f0f0;
+            max-width: 700px;
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
             font-weight: 300;
-            letter-spacing: 5px;
+            letter-spacing: 7px;
             text-transform: uppercase;
-            margin: 0 0 45px 0;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.9);
-            animation: fadeIn 2.5s ease-in-out;
+            margin: 0 0 50px 0;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.9);
+            animation: fadeIn 2.8s ease-in-out;
         }
 
+        /* Modern Luxury Button */
         .btn {
-            padding: 16px 45px;
-            border: 2px solid var(--accent-gold);
-            color: var(--accent-gold);
-            background: rgba(0, 0, 0, 0.6);
+            padding: 18px 50px;
+            border: 1px solid var(--accent-gold);
+            color: #000000;
+            background: var(--accent-gold);
             cursor: pointer;
             font-size: 0.85rem;
             text-transform: uppercase;
-            letter-spacing: 4px;
+            letter-spacing: 5px;
             font-weight: 600;
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
-            backdrop-filter: blur(5px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            box-shadow: 0 8px 30px rgba(223, 183, 108, 0.15);
         }
 
         .btn:hover {
-            background: var(--accent-gold);
-            color: #000000;
-            box-shadow: 0 0 30px rgba(223, 183, 108, 0.4);
-            transform: translateY(-2px);
+            background: transparent;
+            color: var(--accent-gold);
+            box-shadow: 0 0 35px rgba(223, 183, 108, 0.35);
+            transform: translateY(-3px);
         }
 
+        /* Premium Product Section Layout */
         section {
-            padding: 120px 5%;
-            max-width: 1200px;
+            padding: var(--spacing-lg) 6%;
+            max-width: 1300px;
             margin: 0 auto;
         }
 
         .section-title {
-            color: var(--accent-gold);
-            font-size: clamp(2.2rem, 4vw, 3rem);
-            font-weight: 300;
-            letter-spacing: 6px;
+            color: #ffffff;
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            font-weight: 200;
+            letter-spacing: 12px;
             text-transform: uppercase;
-            margin-bottom: 80px;
+            margin-bottom: 100px;
             text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--accent-gold);
+            margin: 25px auto 0 auto;
+            opacity: 0.7;
         }
 
         .products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 60px;
         }
 
+        /* Ultra-Sleek Cards */
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
-            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            position: relative;
         }
 
         .card:hover {
-            transform: translateY(-12px);
-            border-color: var(--accent-gold);
+            transform: translateY(-10px);
+            border-color: rgba(223, 183, 108, 0.4);
         }
 
-        .card.smoke-card:hover { box-shadow: 0 20px 45px rgba(255, 255, 255, 0.03); }
-        .card.secret-card:hover { box-shadow: 0 20px 45px rgba(223, 183, 108, 0.08); }
-        .card.eternity-card:hover { box-shadow: 0 20px 45px rgba(28, 77, 147, 0.15); }
+        /* Custom subtle ambient glow matching perfume identities */
+        .card.smoke-card:hover { box-shadow: 0 30px 60px rgba(255, 255, 255, 0.02); }
+        .card.secret-card:hover { box-shadow: 0 30px 60px rgba(223, 183, 108, 0.05); }
+        .card.eternity-card:hover { box-shadow: 0 30px 60px rgba(28, 77, 147, 0.1); }
 
         .image-wrapper {
             width: 100%;
-            height: 440px;
-            background: #0d0d0d;
+            height: 480px;
+            background: #050505;
             overflow: hidden;
             position: relative;
-            border-bottom: 1px solid var(--border-color);
         }
 
         .image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .card:hover .image-wrapper img {
-            transform: scale(1.03);
+            transform: scale(1.04);
         }
 
+        /* Card Text Content Layer */
         .card-content {
-            padding: 35px 30px;
+            padding: 40px 35px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
             justify-content: space-between;
-            background: linear-gradient(to bottom, #111111, #080808);
+            background: linear-gradient(to bottom, #0b0b0b, #050505);
             text-align: center;
+            border-top: 1px solid var(--border-color);
         }
 
         .card h3 {
-            font-size: 1.65rem;
-            font-weight: 400;
-            margin: 0 0 10px 0;
-            letter-spacing: 2px;
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin: 0 0 12px 0;
+            letter-spacing: 3px;
             text-transform: uppercase;
             color: var(--text-main);
         }
 
         .card p {
             color: var(--text-muted);
-            line-height: 1.6;
-            font-size: 0.95rem;
-            margin: 0 0 15px 0;
-            letter-spacing: 0.5px;
+            line-height: 1.7;
+            font-size: 0.9rem;
+            margin: 0 0 20px 0;
+            font-weight: 300;
         }
 
         .price {
             color: var(--accent-gold);
-            font-weight: 500;
-            font-size: 1.35rem;
+            font-weight: 400;
+            font-size: 1.4rem;
             display: block;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
         }
 
+        /* High-Fashion Button Style */
         .buy {
             display: block;
             text-align: center;
-            padding: 16px;
+            padding: 18px;
             background: transparent;
             color: var(--text-main);
             border: 1px solid var(--border-color);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             text-transform: uppercase;
             font-size: 0.8rem;
-            letter-spacing: 3px;
+            letter-spacing: 4px;
             transition: all 0.4s ease;
         }
 
         .card:hover .buy {
-            background: var(--accent-gold);
-            color: #000000;
             border-color: var(--accent-gold);
-            box-shadow: 0 4px 15px rgba(223, 183, 108, 0.2);
+            background: transparent;
+            color: var(--accent-gold);
         }
 
         .buy:hover {
-            background: #ffffff !important;
+            background: var(--accent-gold) !important;
             color: #000000 !important;
-            box-shadow: 0 4px 20px rgba(255,255,255,0.2) !important;
+            box-shadow: 0 10px 25px rgba(223, 183, 108, 0.25);
         }
 
+        /* Luxury Footer Structure */
         footer {
-            padding: 100px 20px;
+            padding: var(--spacing-lg) 20px;
             text-align: center;
             border-top: 1px solid var(--border-color);
-            background: #030303;
+            background: #010101;
         }
 
         .footer-story {
-            color: #e5e5e5;
-            font-size: 1.15rem;
+            color: #ffffff;
+            font-size: 1rem;
             font-weight: 200;
-            letter-spacing: 5px;
+            letter-spacing: 8px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
         }
 
         .footer-social {
-            color: #666666;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
+            color: #555555;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
             text-transform: uppercase;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: color 0.4s, letter-spacing 0.4s;
+            display: inline-block;
         }
 
         .footer-social:hover {
             color: var(--accent-gold);
+            letter-spacing: 4px;
         }
 
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* Luxury Motion Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); filter: blur(5px); }
+            to { opacity: 1; transform: translateY(0); filter: blur(0); }
         }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
+
+        /* Responsive Polish */
+        @media (max-width: 768px) {
+            section { padding: 90px 24px; }
+            .section-title { margin-bottom: 60px; }
+            .products { gap: 40px; }
+            .image-wrapper { height: 400px; }
+        }
     </style>
 </head>
 
 <body>
 
+    <!-- Header featuring your updated signature line -->
     <header>
         <img src="image_4.png" alt="KHAMEZ Logo Graphic" class="hero-logo">
-        <p>Unveil Your Darkness</p>
+        <p>Unveil Your Darkness with Khamez</p>
         <button class="btn" onclick="document.getElementById('products').scrollIntoView()">Explore Collection</button>
     </header>
 
     <section id="products">
-        <h2 class="section-title">Our Collection</h2>
+        <h2 class="section-title">The Collection</h2>
 
         <div class="products">
 
@@ -267,11 +300,11 @@
                 </div>
                 <div class="card-content">
                     <div>
-                        <h3>Smoke By KHAMEZ</h3>
-                        <p>Woody, manly impression</p>
+                        <h3>Smoke</h3>
+                        <p>A bold, mysterious blend crafted for a commanding woody signature impression.</p>
                         <span class="price">PKR 2,499</span>
                     </div>
-                    <a class="buy" href="https://wa.me/923224153466?text=I%20want%20to%20buy%20Smoke%20perfume" target="_blank">Buy Now</a>
+                    <a class="buy" href="https://wa.me/923224153466?text=I%20want%20to%20buy%20Smoke%20perfume" target="_blank">Order Scent</a>
                 </div>
             </div>
 
@@ -282,11 +315,11 @@
                 </div>
                 <div class="card-content">
                     <div>
-                        <h3>Secret By KHAMEZ</h3>
-                        <p>Soft floral impression</p>
+                        <h3>Secret</h3>
+                        <p>An elegant, nuanced presentation revealing a soft floral profile.</p>
                         <span class="price">PKR 2,499</span>
                     </div>
-                    <a class="buy" href="https://wa.me/923224153466?text=I%20want%20to%20buy%20Secret%20perfume" target="_blank">Buy Now</a>
+                    <a class="buy" href="https://wa.me/923224153466?text=I%20want%20to%20buy%20Secret%20perfume" target="_blank">Order Scent</a>
                 </div>
             </div>
 
@@ -297,11 +330,11 @@
                 </div>
                 <div class="card-content">
                     <div>
-                        <h3>Eternity By KHAMEZ</h3>
-                        <p>Long-lasting refreshing scent</p>
+                        <h3>Eternity</h3>
+                        <p>A sophisticated, long-lasting profile highlighting a crisp, refreshing essence.</p>
                         <span class="price">PKR 2,999</span>
                     </div>
-                    <a class="buy" href="https://wa.me/923224153466?text=I%20want%20to%20buy%20Eternity%20perfume" target="_blank">Buy Now</a>
+                    <a class="buy" href="https://wa.me/923224153466?text=I%20want%20to%20buy%20Eternity%20perfume" target="_blank">Order Scent</a>
                 </div>
             </div>
 
@@ -310,7 +343,7 @@
 
     <footer>
         <p class="footer-story">Luxury. Darkness. Identity.</p>
-        <a href="https://instagram.com/khamez_house" target="_blank" class="footer-social">Follow us: @khamez_house</a>
+        <a href="https://instagram.com/khamez_house" target="_blank" class="footer-social">Discover More: @khamez_house</a>
     </footer>
 
 </body>
