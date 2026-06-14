@@ -24,12 +24,12 @@ padding:0;
 box-sizing:border-box;
 }
 
-/* BACKGROUND GRADIENT */
 body{
 background:linear-gradient(to bottom, #2a2a2a, #050505);
 color:white;
 font-family:Arial,sans-serif;
 scroll-behavior:smooth;
+line-height:1.6;
 }
 
 /* NAV */
@@ -111,17 +111,17 @@ color:black;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <nav>
 <h2 class="logo">KHAMEZ</h2>
-
 <a href="#products">COLLECTION</a>
 </nav>
 
-<header>
+<header class="reveal">
 
 <div class="hero-subtitle">
 MAISON DE PARFUM EST. MMXXV
@@ -136,20 +136,13 @@ EXPLORE COLLECTION
 </a>
 
 </header>
-<section class="story">
+<section class="story reveal">
 
 <h2 class="section-title">
 THE HOUSE OF KHAMEZ
 </h2>
 
-<p style="
-max-width:900px;
-margin:auto;
-text-align:center;
-line-height:2;
-color:#bdbdbd;
-font-size:1.1rem;
-">
+<p class="story-text">
 
 KHAMEZ is more than fragrance.
 It is identity captured in a bottle.
@@ -161,13 +154,7 @@ Luxury. Darkness. Identity.
 
 </p>
 
-<div style="
-display:flex;
-justify-content:center;
-gap:20px;
-flex-wrap:wrap;
-margin-top:50px;
-">
+<div class="features">
 
 <div class="feature-box">
 🚚 Free Delivery
@@ -185,17 +172,13 @@ margin-top:50px;
 
 </section>
 
+<section class="reveal">
 
-<section>
 <h2 class="section-title">
 CUSTOMER REVIEWS
 </h2>
 
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
-">
+<div class="reviews">
 
 <div class="review-card">
 ★★★★★
@@ -218,6 +201,13 @@ gap:25px;
 
 <style>
 
+/* SECTION BASE SPACING FIX (IMPORTANT) */
+section{
+padding:120px 6%;
+margin-top:60px;
+}
+
+/* SECTION TITLE */
 .section-title{
 font-family:'Cinzel',serif;
 text-align:center;
@@ -226,7 +216,25 @@ margin-bottom:70px;
 color:var(--gold);
 }
 
-/* FEATURE BOXES UPDATED COLOR */
+/* STORY TEXT */
+.story-text{
+max-width:900px;
+margin:auto;
+text-align:center;
+line-height:2;
+color:#bdbdbd;
+font-size:1.1rem;
+margin-bottom:60px;
+}
+
+/* FEATURES */
+.features{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
 .feature-box{
 border:1px solid #333;
 padding:18px 25px;
@@ -242,6 +250,12 @@ color:var(--gold);
 }
 
 /* REVIEWS */
+.reviews{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
 .review-card{
 background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
 padding:25px;
@@ -261,7 +275,7 @@ line-height:1.6;
 }
 
 </style>
-<section id="products">
+<section id="products" class="reveal">
 
 <h2 class="section-title">
 THE COLLECTION
@@ -370,6 +384,7 @@ BUY NOW
 </div>
 
 </div>
+
 </section>
 
 <style>
@@ -382,7 +397,7 @@ gap:30px;
 padding:0 6%;
 }
 
-/* MOBILE → horizontal scroll slider */
+/* MOBILE SLIDER */
 @media(max-width:768px){
 .product-grid{
 display:flex;
@@ -397,12 +412,19 @@ scroll-snap-align:center;
 }
 }
 
+/* PRODUCT CARD */
 .product-card{
 background:#0d0d0d;
 border:1px solid #222;
 overflow:hidden;
 transition:.4s;
+transform:translateY(40px);
+animation:fadeUp 0.8s forwards;
 }
+
+.product-card:nth-child(1){animation-delay:.1s;}
+.product-card:nth-child(2){animation-delay:.3s;}
+.product-card:nth-child(3){animation-delay:.5s;}
 
 .product-card:hover{
 transform:translateY(-10px);
@@ -415,6 +437,7 @@ height:320px;
 object-fit:cover;
 }
 
+/* CONTENT */
 .product-content{
 padding:25px;
 }
@@ -430,12 +453,14 @@ color:#bdbdbd;
 line-height:1.7;
 }
 
+/* NOTES */
 .notes{
 margin-top:15px;
 color:#dfb76c;
 line-height:1.6;
 }
 
+/* PRICE */
 .price{
 margin-top:20px;
 }
@@ -459,7 +484,7 @@ margin-top:10px;
 color:#dfb76c;
 }
 
-/* GOLD BUY BUTTON */
+/* BUY BUTTON (GOLD) */
 .buy-btn{
 display:block;
 margin-top:20px;
@@ -478,7 +503,7 @@ box-shadow:0 0 20px #dfb76c;
 }
 
 </style>
-<section style="text-align:center;">
+<section class="reveal" style="text-align:center;">
 
 <h2 class="section-title">
 FOLLOW KHAMEZ
@@ -491,7 +516,7 @@ Discover new releases and luxury content.
 <a href="https://instagram.com/khamez_house"
 class="insta-link">
 
-<span class="insta-icon">📸</span>
+<span>📸</span>
 @khamez_house
 
 </a>
@@ -510,8 +535,24 @@ Luxury. Darkness. Identity. © KHAMEZ
 class="whatsapp">
 
 WhatsApp Order
+
 </a>
 
+
+<!-- SCROLL ANIMATION SCRIPT -->
+<script>
+const elements = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('active');
+    }
+  });
+}, { threshold: 0.15 });
+
+elements.forEach(el => observer.observe(el));
+</script>
 
 <style>
 
@@ -539,7 +580,7 @@ color:#888;
 margin-top:80px;
 }
 
-/* WHATSAPP BUTTON */
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 right:25px;
@@ -558,7 +599,19 @@ transition:.3s;
 transform:scale(1.05);
 }
 
-/* SMALL MOBILE FIX */
+/* SCROLL ANIMATION BASE */
+.reveal{
+opacity:0;
+transform:translateY(40px);
+transition:all 0.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE FIX */
 @media(max-width:600px){
 .hero-title{
 font-size:2rem;
