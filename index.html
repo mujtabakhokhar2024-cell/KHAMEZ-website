@@ -14,6 +14,7 @@
 :root{
 --gold:#dfb76c;
 --black:#050505;
+--gray:#1a1a1a;
 --white:#ffffff;
 }
 
@@ -22,68 +23,16 @@ margin:0;
 padding:0;
 box-sizing:border-box;
 }
-@keyframes fadeUp {
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
 
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.hero-title,
-.hero-subtitle,
-.hero-btn{
-    animation:fadeUp 1.2s ease forwards;
-}
-.card{
-    transition:all .5s ease;
-}
-
-.card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 20px 40px rgba(223,183,108,.15);
-}
-.logo{
-    font-family:'Cinzel',serif;
-    letter-spacing:6px;
-
-    animation:goldGlow 3s infinite;
-}
-
-@keyframes goldGlow{
-
-    0%{
-        color:white;
-    }
-
-    50%{
-        color:#dfb76c;
-        text-shadow:0 0 20px #dfb76c;
-    }
-
-    100%{
-        color:white;
-    }
-}
-.hero-btn:hover{
-    background:#dfb76c;
-    color:black;
-
-    box-shadow:
-    0 0 15px #dfb76c,
-    0 0 30px #dfb76c;
-}
+/* BACKGROUND GRADIENT */
 body{
-background:var(--black);
+background:linear-gradient(to bottom, #2a2a2a, #050505);
 color:white;
 font-family:Arial,sans-serif;
 scroll-behavior:smooth;
 }
 
+/* NAV */
 nav{
 position:fixed;
 top:0;
@@ -102,6 +51,7 @@ z-index:999;
 font-family:'Cinzel',serif;
 letter-spacing:6px;
 font-size:1.5rem;
+animation:goldGlow 3s infinite;
 }
 
 nav a{
@@ -110,6 +60,7 @@ text-decoration:none;
 letter-spacing:2px;
 }
 
+/* HERO */
 header{
 height:100vh;
 display:flex;
@@ -117,11 +68,9 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-
 background:
 linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.9)),
 url('image_6.png');
-
 background-size:cover;
 background-position:center;
 padding:20px;
@@ -155,26 +104,20 @@ background:var(--gold);
 color:black;
 }
 
-section{
-padding:120px 6%;
-}
-
-.section-title{
-font-family:'Cinzel',serif;
-text-align:center;
-letter-spacing:8px;
-margin-bottom:70px;
-color:var(--gold);
+@keyframes goldGlow{
+0%{color:white;}
+50%{color:#dfb76c;text-shadow:0 0 20px #dfb76c;}
+100%{color:white;}
 }
 
 </style>
-
 </head>
 
 <body>
 
 <nav>
 <h2 class="logo">KHAMEZ</h2>
+
 <a href="#products">COLLECTION</a>
 </nav>
 
@@ -185,7 +128,7 @@ MAISON DE PARFUM EST. MMXXV
 </div>
 
 <h1 class="hero-title">
-Crafted For Those Who Refuse To Be Forgotten
+Unveil Your Darkness With Khamez
 </h1>
 
 <a href="#products" class="hero-btn">
@@ -226,27 +169,15 @@ flex-wrap:wrap;
 margin-top:50px;
 ">
 
-<div style="
-border:1px solid #222;
-padding:18px 25px;
-background:#0b0b0b;
-">
+<div class="feature-box">
 🚚 Free Delivery
 </div>
 
-<div style="
-border:1px solid #222;
-padding:18px 25px;
-background:#0b0b0b;
-">
+<div class="feature-box">
 💵 Cash On Delivery
 </div>
 
-<div style="
-border:1px solid #222;
-padding:18px 25px;
-background:#0b0b0b;
-">
+<div class="feature-box">
 ⏳ Long Lasting Fragrance
 </div>
 
@@ -254,278 +185,8 @@ background:#0b0b0b;
 
 </section>
 
-<section id="products">
-
-<h2 class="section-title">
-THE COLLECTION
-</h2>
-
-<div style="
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:40px;
-">
-
-<!-- SMOKE -->
-
-<div style="
-background:#0d0d0d;
-border:1px solid #222;
-overflow:hidden;
-">
-
-<img src="image.png"
-style="
-width:100%;
-height:420px;
-object-fit:cover;
-">
-
-<div style="padding:30px;">
-
-<h3 style="
-font-family:Cinzel;
-letter-spacing:3px;
-margin-bottom:15px;
-">
-SMOKE
-</h3>
-
-<p style="
-color:#bdbdbd;
-line-height:1.8;
-">
-A deep woody fragrance infused with mystery and confidence,
-crafted for those who command attention without speaking a word.
-</p>
-
-<div style="
-margin-top:15px;
-color:#dfb76c;
-line-height:1.8;
-">
-
-Top Notes: Bergamot<br>
-Heart Notes: Lavender<br>
-Base Notes: Musk & Cedarwood
-
-</div>
-
-<div style="margin-top:20px;">
-
-<span style="
-text-decoration:line-through;
-color:#888;
-">
-PKR 3,100
-</span>
-
-<span style="
-background:#dfb76c;
-color:black;
-padding:3px 8px;
-margin-left:8px;
-font-size:.8rem;
-font-weight:bold;
-">
-20% OFF
-</span>
-
-<h3 style="
-margin-top:10px;
-color:#dfb76c;
-">
-PKR 2,499
-</h3>
-
-</div>
-
-</div>
-<!-- SECRET -->
-
-<div style="
-background:#0d0d0d;
-border:1px solid #222;
-overflow:hidden;
-">
-
-<img src="image_3.png"
-style="
-width:100%;
-height:420px;
-object-fit:cover;
-">
-
-<div style="padding:30px;">
-
-<h3 style="
-font-family:Cinzel;
-letter-spacing:3px;
-margin-bottom:15px;
-">
-SECRET
-</h3>
-
-<p style="
-color:#bdbdbd;
-line-height:1.8;
-">
-An elegant floral composition revealing sophistication,
-grace and timeless charm.
-</p>
-
-<div style="
-margin-top:15px;
-color:#dfb76c;
-line-height:1.8;
-">
-
-Top Notes: Pear<br>
-Heart Notes: Jasmine<br>
-Base Notes: Vanilla & Amber
-
-</div>
-
-<div style="margin-top:20px;">
-
-<span style="
-text-decoration:line-through;
-color:#888;
-">
-PKR 3,100
-</span>
-
-<span style="
-background:#dfb76c;
-color:black;
-padding:3px 8px;
-margin-left:8px;
-font-size:.8rem;
-font-weight:bold;
-">
-20% OFF
-</span>
-
-<h3 style="
-margin-top:10px;
-color:#dfb76c;
-">
-PKR 2,499
-</h3>
-
-</div>
-
-<a href="https://wa.me/923224153466?text=I%20want%20Secret"
-style="
-display:block;
-margin-top:20px;
-text-align:center;
-padding:15px;
-border:1px solid #dfb76c;
-color:#dfb76c;
-text-decoration:none;
-">
-ORDER NOW
-</a>
-
-</div>
-</div>
-
-<!-- ETERNITY -->
-
-<div style="
-background:#0d0d0d;
-border:1px solid #222;
-overflow:hidden;
-">
-
-<img src="image_2.png"
-style="
-width:100%;
-height:420px;
-object-fit:cover;
-">
-
-<div style="padding:30px;">
-
-<h3 style="
-font-family:Cinzel;
-letter-spacing:3px;
-margin-bottom:15px;
-">
-ETERNITY
-</h3>
-
-<p style="
-color:#bdbdbd;
-line-height:1.8;
-">
-A crisp and refreshing luxury fragrance crafted
-for everyday confidence and elegance.
-</p>
-
-<div style="
-margin-top:15px;
-color:#dfb76c;
-line-height:1.8;
-">
-
-Top Notes: Citrus<br>
-Heart Notes: Marine Accord<br>
-Base Notes: Amberwood
-
-</div>
-
-<div style="margin-top:20px;">
-
-<span style="
-text-decoration:line-through;
-color:#888;
-">
-PKR 3,750
-</span>
-
-<span style="
-background:#dfb76c;
-color:black;
-padding:3px 8px;
-margin-left:8px;
-font-size:.8rem;
-font-weight:bold;
-">
-20% OFF
-</span>
-
-<h3 style="
-margin-top:10px;
-color:#dfb76c;
-">
-PKR 2,999
-</h3>
-
-</div>
-
-<a href="https://wa.me/923224153466?text=I%20want%20Eternity"
-style="
-display:block;
-margin-top:20px;
-text-align:center;
-padding:15px;
-border:1px solid #dfb76c;
-color:#dfb76c;
-text-decoration:none;
-">
-ORDER NOW
-</a>
-
-</div>
-</div>
-
-</div>
-</section>
 
 <section>
-
 <h2 class="section-title">
 CUSTOMER REVIEWS
 </h2>
@@ -536,80 +197,350 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 ">
 
-<div style="
-background:#0d0d0d;
-padding:25px;
-border:1px solid #222;
-">
+<div class="review-card">
 ★★★★★
-<p style="margin-top:15px;color:#bdbdbd;">
-Amazing fragrance and long lasting performance.
-</p>
+<p>Amazing fragrance and long lasting performance.</p>
 </div>
 
-<div style="
-background:#0d0d0d;
-padding:25px;
-border:1px solid #222;
-">
+<div class="review-card">
 ★★★★★
-<p style="margin-top:15px;color:#bdbdbd;">
-Smoke gets compliments everywhere I go.
-</p>
+<p>Smoke gets compliments everywhere I go.</p>
 </div>
 
-<div style="
-background:#0d0d0d;
-padding:25px;
-border:1px solid #222;
-">
+<div class="review-card">
 ★★★★★
-<p style="margin-top:15px;color:#bdbdbd;">
-Premium packaging and premium scent.
-</p>
+<p>Premium packaging and premium scent.</p>
 </div>
 
 </div>
 
 </section>
 
+<style>
+
+.section-title{
+font-family:'Cinzel',serif;
+text-align:center;
+letter-spacing:8px;
+margin-bottom:70px;
+color:var(--gold);
+}
+
+/* FEATURE BOXES UPDATED COLOR */
+.feature-box{
+border:1px solid #333;
+padding:18px 25px;
+background:linear-gradient(145deg,#2b2b2b,#111);
+color:#e0e0e0;
+transition:.3s;
+}
+
+.feature-box:hover{
+transform:translateY(-5px);
+border-color:var(--gold);
+color:var(--gold);
+}
+
+/* REVIEWS */
+.review-card{
+background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
+padding:25px;
+border:1px solid #222;
+transition:.3s;
+}
+
+.review-card:hover{
+border-color:var(--gold);
+transform:translateY(-5px);
+}
+
+.review-card p{
+margin-top:15px;
+color:#bdbdbd;
+line-height:1.6;
+}
+
+</style>
+<section id="products">
+
+<h2 class="section-title">
+THE COLLECTION
+</h2>
+
+<div class="product-grid">
+
+<!-- SMOKE -->
+<div class="product-card">
+
+<img src="image.png">
+
+<div class="product-content">
+
+<h3>SMOKE</h3>
+
+<p>
+A deep woody fragrance infused with mystery and confidence,
+crafted for those who command attention without speaking a word.
+</p>
+
+<div class="notes">
+Top Notes: Bergamot<br>
+Heart Notes: Lavender<br>
+Base Notes: Musk & Cedarwood
+</div>
+
+<div class="price">
+<span class="old">PKR 3,100</span>
+<span class="discount">20% OFF</span>
+<h3 class="new">PKR 2,499</h3>
+</div>
+
+<a href="https://wa.me/923224153466?text=I%20want%20Smoke"
+class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+</div>
+
+<!-- SECRET -->
+<div class="product-card">
+
+<img src="image_3.png">
+
+<div class="product-content">
+
+<h3>SECRET</h3>
+
+<p>
+An elegant floral composition revealing sophistication and grace.
+</p>
+
+<div class="notes">
+Top Notes: Pear<br>
+Heart Notes: Jasmine<br>
+Base Notes: Vanilla & Amber
+</div>
+
+<div class="price">
+<span class="old">PKR 3,100</span>
+<span class="discount">20% OFF</span>
+<h3 class="new">PKR 2,499</h3>
+</div>
+
+<a href="https://wa.me/923224153466?text=I%20want%20Secret"
+class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+</div>
+
+<!-- ETERNITY -->
+<div class="product-card">
+
+<img src="image_2.png">
+
+<div class="product-content">
+
+<h3>ETERNITY</h3>
+
+<p>
+A crisp and refreshing luxury fragrance for everyday confidence.
+</p>
+
+<div class="notes">
+Top Notes: Citrus<br>
+Heart Notes: Marine Accord<br>
+Base Notes: Amberwood
+</div>
+
+<div class="price">
+<span class="old">PKR 3,750</span>
+<span class="discount">20% OFF</span>
+<h3 class="new">PKR 2,999</h3>
+</div>
+
+<a href="https://wa.me/923224153466?text=I%20want%20Eternity"
+class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<style>
+
+/* GRID (2 per row desktop) */
+.product-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:30px;
+padding:0 6%;
+}
+
+/* MOBILE → horizontal scroll slider */
+@media(max-width:768px){
+.product-grid{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+gap:20px;
+}
+
+.product-card{
+min-width:85%;
+scroll-snap-align:center;
+}
+}
+
+.product-card{
+background:#0d0d0d;
+border:1px solid #222;
+overflow:hidden;
+transition:.4s;
+}
+
+.product-card:hover{
+transform:translateY(-10px);
+border-color:var(--gold);
+}
+
+.product-card img{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.product-content{
+padding:25px;
+}
+
+.product-content h3{
+font-family:'Cinzel';
+letter-spacing:3px;
+margin-bottom:10px;
+}
+
+.product-content p{
+color:#bdbdbd;
+line-height:1.7;
+}
+
+.notes{
+margin-top:15px;
+color:#dfb76c;
+line-height:1.6;
+}
+
+.price{
+margin-top:20px;
+}
+
+.old{
+text-decoration:line-through;
+color:#777;
+}
+
+.discount{
+background:#dfb76c;
+color:black;
+padding:3px 8px;
+margin-left:8px;
+font-size:.8rem;
+font-weight:bold;
+}
+
+.new{
+margin-top:10px;
+color:#dfb76c;
+}
+
+/* GOLD BUY BUTTON */
+.buy-btn{
+display:block;
+margin-top:20px;
+text-align:center;
+padding:15px;
+border:1px solid #dfb76c;
+color:#dfb76c;
+text-decoration:none;
+transition:.3s;
+}
+
+.buy-btn:hover{
+background:#dfb76c;
+color:black;
+box-shadow:0 0 20px #dfb76c;
+}
+
+</style>
 <section style="text-align:center;">
 
 <h2 class="section-title">
 FOLLOW KHAMEZ
 </h2>
 
-<p style="
-color:#bdbdbd;
-margin-bottom:20px;
-">
+<p style="color:#bdbdbd;margin-bottom:20px;">
 Discover new releases and luxury content.
 </p>
 
 <a href="https://instagram.com/khamez_house"
-style="
-color:#dfb76c;
-text-decoration:none;
-font-size:1.1rem;
-">
+class="insta-link">
+
+<span class="insta-icon">📸</span>
 @khamez_house
+
 </a>
 
 </section>
 
-<footer style="
-text-align:center;
-padding:60px 20px;
-border-top:1px solid #222;
-color:#888;
-">
+
+<footer class="footer">
 
 Luxury. Darkness. Identity. © KHAMEZ
 
 </footer>
 
+
 <a href="https://wa.me/923224153466"
-style="
+class="whatsapp">
+
+WhatsApp Order
+</a>
+
+
+<style>
+
+/* INSTAGRAM */
+.insta-link{
+color:#dfb76c;
+text-decoration:none;
+font-size:1.2rem;
+display:inline-flex;
+align-items:center;
+gap:10px;
+transition:.3s;
+}
+
+.insta-link:hover{
+text-shadow:0 0 15px #dfb76c;
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+padding:60px 20px;
+border-top:1px solid #222;
+color:#888;
+margin-top:80px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
 position:fixed;
 right:25px;
 bottom:25px;
@@ -620,9 +551,25 @@ padding:16px 22px;
 border-radius:50px;
 font-weight:bold;
 box-shadow:0 10px 25px rgba(0,0,0,.3);
-">
-WhatsApp Order
-</a>
+transition:.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.05);
+}
+
+/* SMALL MOBILE FIX */
+@media(max-width:600px){
+.hero-title{
+font-size:2rem;
+}
+
+.product-card img{
+height:260px;
+}
+}
+
+</style>
 
 </body>
 </html>
