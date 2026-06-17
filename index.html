@@ -1,11 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KHAMEZ | Luxury Fragrances</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 
 :root{
 --gold:#dfb76c;
---gold-light:#f0d08d;
 --black:#050505;
---dark:#121212;
---gray:#1f1f1f;
+--gray:#1a1a1a;
 --white:#ffffff;
 }
 
@@ -15,499 +24,434 @@ padding:0;
 box-sizing:border-box;
 }
 
-html{
+/* BACKGROUND GRADIENT */
+body{
+background:linear-gradient(to bottom, #2a2a2a, #050505);
+color:white;
+font-family:Arial,sans-serif;
 scroll-behavior:smooth;
 }
 
-body{
-font-family:Arial,sans-serif;
-color:white;
-overflow-x:hidden;
-
-background:
-linear-gradient(
-135deg,
-#2a2a2a 0%,
-#1b1b1b 30%,
-#080808 70%,
-#000000 100%
-);
-
-background-size:400% 400%;
-animation:bgMove 15s ease infinite;
-}
-
-@keyframes bgMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
-}
-
-/* NAVBAR */
-
+/* NAV */
 nav{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-
-padding:16px 6%;
-
+padding:25px 6%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-
-background:rgba(0,0,0,.65);
-backdrop-filter:blur(15px);
-
-border-bottom:1px solid rgba(223,183,108,.15);
-
+background:rgba(0,0,0,.7);
+backdrop-filter:blur(10px);
 z-index:999;
 }
 
 .logo{
 font-family:'Cinzel',serif;
-letter-spacing:5px;
-font-size:1.4rem;
-
-animation:goldGlow 4s infinite;
+letter-spacing:6px;
+font-size:1.5rem;
+animation:goldGlow 3s infinite;
 }
 
 nav a{
 color:var(--gold);
 text-decoration:none;
-
-font-size:.85rem;
-letter-spacing:1px;
-
-transition:.3s;
-}
-
-nav a:hover{
-color:white;
+letter-spacing:2px;
 }
 
 /* HERO */
-
 header{
 height:100vh;
-
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
-
 text-align:center;
-
-padding:20px;
-
 background:
-linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.85)),
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.9)),
 url('image_6.png');
-
 background-size:cover;
 background-position:center;
+padding:20px;
 }
 
 .hero-subtitle{
 color:var(--gold);
-
-letter-spacing:4px;
-font-size:.8rem;
-
-margin-bottom:15px;
-
-animation:fadeUp 1s ease;
+letter-spacing:6px;
+margin-bottom:20px;
+font-size:.9rem;
 }
 
 .hero-title{
 font-family:'Playfair Display',serif;
-
 font-size:clamp(2rem,5vw,4.5rem);
-
-max-width:850px;
-
+max-width:900px;
 line-height:1.2;
-
-animation:fadeUp 1.5s ease;
 }
 
 .hero-btn{
-margin-top:30px;
-
-padding:14px 30px;
-
+margin-top:40px;
+padding:18px 40px;
 border:1px solid var(--gold);
-
 color:var(--gold);
 text-decoration:none;
-
-position:relative;
-overflow:hidden;
-
 transition:.4s;
 }
 
 .hero-btn:hover{
 background:var(--gold);
 color:black;
-box-shadow:0 0 25px rgba(223,183,108,.5);
-}
-
-.hero-btn::before{
-content:'';
-
-position:absolute;
-top:0;
-left:-100%;
-
-width:100%;
-height:100%;
-
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.4),
-transparent
-);
-
-transition:.7s;
-}
-
-.hero-btn:hover::before{
-left:100%;
 }
 
 @keyframes goldGlow{
-0%{
-color:white;
-}
-
-50%{
-color:var(--gold);
-text-shadow:0 0 20px var(--gold);
-}
-
-100%{
-color:white;
-}
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-.logo{
-font-size:1.1rem;
-}
-
-nav a{
-font-size:.75rem;
-}
-
-.hero-title{
-font-size:2rem;
-}
-
-.hero-subtitle{
-font-size:.7rem;
-}
-
+0%{color:white;}
+50%{color:#dfb76c;text-shadow:0 0 20px #dfb76c;}
+100%{color:white;}
 }
 
 </style>
-<style>
+</head>
 
-/* SECTION SPACING */
+<body>
 
-section{
-padding:90px 5%;
-margin-top:20px;
-}
+<nav>
+<h2 class="logo">KHAMEZ</h2>
 
-/* TITLES */
+<a href="#products">COLLECTION</a>
+</nav>
 
-.section-title{
-font-family:'Cinzel',serif;
-text-align:center;
-letter-spacing:6px;
-margin-bottom:50px;
-color:#dfb76c;
-font-size:clamp(1.4rem,3vw,2rem);
-}
+<header>
 
-/* STORY */
+<div class="hero-subtitle">
+MAISON DE PARFUM EST. MMXXV
+</div>
 
-.story{
-position:relative;
-}
+<h1 class="hero-title">
+Unveil Your Darkness With Khamez
+</h1>
 
-.story-text{
-max-width:800px;
+<a href="#products" class="hero-btn">
+EXPLORE COLLECTION
+</a>
+
+</header>
+<section class="story">
+
+<h2 class="section-title">
+THE HOUSE OF KHAMEZ
+</h2>
+
+<p style="
+max-width:900px;
 margin:auto;
 text-align:center;
 line-height:2;
-color:#c5c5c5;
-font-size:1rem;
-margin-bottom:50px;
-}
+color:#bdbdbd;
+font-size:1.1rem;
+">
 
-/* FEATURES */
+KHAMEZ is more than fragrance.
+It is identity captured in a bottle.
 
-.features{
+Inspired by mystery, elegance and power,
+every scent is crafted to leave a lasting impression.
+
+Luxury. Darkness. Identity.
+
+</p>
+
+<div style="
 display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
-}
+margin-top:50px;
+">
 
-.feature-box{
-padding:16px 22px;
+<div class="feature-box">
+🚚 Free Delivery
+</div>
 
-background:rgba(255,255,255,.03);
+<div class="feature-box">
+💵 Cash On Delivery
+</div>
 
-backdrop-filter:blur(10px);
+<div class="feature-box">
+⏳ Long Lasting Fragrance
+</div>
 
-border:1px solid rgba(223,183,108,.15);
+</div>
 
-border-radius:12px;
+</section>
 
-transition:.4s ease;
-}
 
-.feature-box:hover{
-transform:translateY(-8px);
+<section>
+<h2 class="section-title">
+CUSTOMER REVIEWS
+</h2>
 
-border-color:#dfb76c;
-
-box-shadow:
-0 0 25px rgba(223,183,108,.15);
-}
-
-/* REVIEWS */
-
-.reviews{
+<div style="
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
+">
+
+<div class="review-card">
+★★★★★
+<p>Amazing fragrance and long lasting performance.</p>
+</div>
+
+<div class="review-card">
+★★★★★
+<p>Smoke gets compliments everywhere I go.</p>
+</div>
+
+<div class="review-card">
+★★★★★
+<p>Premium packaging and premium scent.</p>
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.section-title{
+font-family:'Cinzel',serif;
+text-align:center;
+letter-spacing:8px;
+margin-bottom:70px;
+color:var(--gold);
 }
 
+/* FEATURE BOXES UPDATED COLOR */
+.feature-box{
+border:1px solid #333;
+padding:18px 25px;
+background:linear-gradient(145deg,#2b2b2b,#111);
+color:#e0e0e0;
+transition:.3s;
+}
+
+.feature-box:hover{
+transform:translateY(-5px);
+border-color:var(--gold);
+color:var(--gold);
+}
+
+/* REVIEWS */
 .review-card{
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.03),
-rgba(255,255,255,.01)
-);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(223,183,108,.12);
-
+background:linear-gradient(145deg,#1a1a1a,#0d0d0d);
 padding:25px;
-
-border-radius:16px;
-
-transition:.4s ease;
+border:1px solid #222;
+transition:.3s;
 }
 
 .review-card:hover{
-
-transform:translateY(-10px);
-
-border-color:#dfb76c;
-
-box-shadow:
-0 0 30px rgba(223,183,108,.15);
+border-color:var(--gold);
+transform:translateY(-5px);
 }
 
 .review-card p{
-margin-top:12px;
-color:#c4c4c4;
-line-height:1.7;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-section{
-padding:70px 5%;
-}
-
-.section-title{
-letter-spacing:3px;
-font-size:1.3rem;
-}
-
-.story-text{
-font-size:.92rem;
-line-height:1.8;
-}
-
-.feature-box{
-width:100%;
-text-align:center;
-}
-
+margin-top:15px;
+color:#bdbdbd;
+line-height:1.6;
 }
 
 </style>
+<section id="products">
+
+<h2 class="section-title">
+THE COLLECTION
+</h2>
+
+<div class="product-grid">
+
+<!-- SMOKE -->
+<div class="product-card">
+
+<img src="image.png">
+
+<div class="product-content">
+
+<h3>SMOKE</h3>
+
+<p>
+A deep woody fragrance infused with mystery and confidence,
+crafted for those who command attention without speaking a word.
+</p>
+
+<div class="notes">
+Top Notes: Bergamot<br>
+Heart Notes: Lavender<br>
+Base Notes: Musk & Cedarwood
+</div>
+
+<div class="price">
+<span class="old">PKR 3,100</span>
+<span class="discount">20% OFF</span>
+<h3 class="new">PKR 2,499</h3>
+</div>
+
+<a href="https://wa.me/923224153466?text=I%20want%20Smoke"
+class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+</div>
+
+<!-- SECRET -->
+<div class="product-card">
+
+<img src="image_3.png">
+
+<div class="product-content">
+
+<h3>SECRET</h3>
+
+<p>
+An elegant floral composition revealing sophistication and grace.
+</p>
+
+<div class="notes">
+Top Notes: Pear<br>
+Heart Notes: Jasmine<br>
+Base Notes: Vanilla & Amber
+</div>
+
+<div class="price">
+<span class="old">PKR 3,100</span>
+<span class="discount">20% OFF</span>
+<h3 class="new">PKR 2,499</h3>
+</div>
+
+<a href="https://wa.me/923224153466?text=I%20want%20Secret"
+class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+</div>
+
+<!-- ETERNITY -->
+<div class="product-card">
+
+<img src="image_2.png">
+
+<div class="product-content">
+
+<h3>ETERNITY</h3>
+
+<p>
+A crisp and refreshing luxury fragrance for everyday confidence.
+</p>
+
+<div class="notes">
+Top Notes: Citrus<br>
+Heart Notes: Marine Accord<br>
+Base Notes: Amberwood
+</div>
+
+<div class="price">
+<span class="old">PKR 3,750</span>
+<span class="discount">20% OFF</span>
+<h3 class="new">PKR 2,999</h3>
+</div>
+
+<a href="https://wa.me/923224153466?text=I%20want%20Eternity"
+class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+</div>
+
+</div>
+</section>
+
 <style>
 
-/* PRODUCT GRID */
-
+/* GRID (2 per row desktop) */
 .product-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:25px;
-max-width:1000px;
-margin:auto;
+gap:30px;
+padding:0 6%;
 }
 
-/* THIRD PRODUCT CENTER */
-
-.product-card:last-child{
-grid-column:1/3;
-max-width:450px;
-margin:auto;
+/* MOBILE → horizontal scroll slider */
+@media(max-width:768px){
+.product-grid{
+display:flex;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+gap:20px;
 }
-
-/* PRODUCT CARD */
 
 .product-card{
+min-width:85%;
+scroll-snap-align:center;
+}
+}
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.03),
-rgba(255,255,255,.01)
-);
-
-backdrop-filter:blur(15px);
-
-border:1px solid rgba(223,183,108,.12);
-
-border-radius:18px;
-
+.product-card{
+background:#0d0d0d;
+border:1px solid #222;
 overflow:hidden;
-
-transition:.4s ease;
+transition:.4s;
 }
 
 .product-card:hover{
-
 transform:translateY(-10px);
-
-border-color:#dfb76c;
-
-box-shadow:
-0 0 35px rgba(223,183,108,.18);
+border-color:var(--gold);
 }
-
-/* IMAGE */
 
 .product-card img{
-
 width:100%;
-height:220px;
-
-object-fit:contain;
-
-padding:20px;
-
-animation:floatBottle 4s ease-in-out infinite;
+height:320px;
+object-fit:cover;
 }
-
-@keyframes floatBottle{
-
-0%{
-transform:translateY(0);
-}
-
-50%{
-transform:translateY(-8px);
-}
-
-100%{
-transform:translateY(0);
-}
-
-}
-
-/* CONTENT */
 
 .product-content{
-padding:20px;
-text-align:center;
+padding:25px;
 }
 
 .product-content h3{
-
 font-family:'Cinzel';
-
 letter-spacing:3px;
-
 margin-bottom:10px;
 }
 
-/* SHORT TEXT */
-
 .product-content p{
-
-color:#c5c5c5;
-
-font-size:.92rem;
-
-margin-bottom:15px;
+color:#bdbdbd;
+line-height:1.7;
 }
-
-/* HIDE NOTES */
 
 .notes{
-display:none;
+margin-top:15px;
+color:#dfb76c;
+line-height:1.6;
 }
 
-/* PRICE */
-
 .price{
-margin-top:10px;
+margin-top:20px;
 }
 
 .old{
 text-decoration:line-through;
 color:#777;
-font-size:.9rem;
 }
 
 .discount{
-
 background:#dfb76c;
-
 color:black;
-
-padding:4px 8px;
-
-font-size:.75rem;
-
-font-weight:bold;
-
-border-radius:20px;
-
+padding:3px 8px;
 margin-left:8px;
+font-size:.8rem;
+font-weight:bold;
 }
 
 .new{
@@ -515,193 +459,117 @@ margin-top:10px;
 color:#dfb76c;
 }
 
-/* BUTTON */
-
+/* GOLD BUY BUTTON */
 .buy-btn{
-
 display:block;
-
-margin-top:18px;
-
-padding:14px;
-
-border-radius:50px;
-
-text-decoration:none;
-
+margin-top:20px;
+text-align:center;
+padding:15px;
 border:1px solid #dfb76c;
-
 color:#dfb76c;
-
-position:relative;
-
-overflow:hidden;
-
-transition:.4s;
+text-decoration:none;
+transition:.3s;
 }
 
 .buy-btn:hover{
-
 background:#dfb76c;
-
 color:black;
-
-box-shadow:
-0 0 25px rgba(223,183,108,.4);
+box-shadow:0 0 20px #dfb76c;
 }
 
-/* MOBILE */
+</style>
+<section style="text-align:center;">
 
-@media(max-width:768px){
+<h2 class="section-title">
+FOLLOW KHAMEZ
+</h2>
 
-.product-grid{
-grid-template-columns:1fr;
+<p style="color:#bdbdbd;margin-bottom:20px;">
+Discover new releases and luxury content.
+</p>
+
+<a href="https://instagram.com/khamez_house"
+class="insta-link">
+
+<span class="insta-icon">📸</span>
+@khamez_house
+
+</a>
+
+</section>
+
+
+<footer class="footer">
+
+Luxury. Darkness. Identity. © KHAMEZ
+
+</footer>
+
+
+<a href="https://wa.me/923224153466"
+class="whatsapp">
+
+WhatsApp Order
+</a>
+
+
+<style>
+
+/* INSTAGRAM */
+.insta-link{
+color:#dfb76c;
+text-decoration:none;
+font-size:1.2rem;
+display:inline-flex;
+align-items:center;
+gap:10px;
+transition:.3s;
 }
 
-.product-card:last-child{
-grid-column:auto;
-max-width:100%;
+.insta-link:hover{
+text-shadow:0 0 15px #dfb76c;
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+padding:60px 20px;
+border-top:1px solid #222;
+color:#888;
+margin-top:80px;
+}
+
+/* WHATSAPP BUTTON */
+.whatsapp{
+position:fixed;
+right:25px;
+bottom:25px;
+background:#25D366;
+color:white;
+text-decoration:none;
+padding:16px 22px;
+border-radius:50px;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+transition:.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.05);
+}
+
+/* SMALL MOBILE FIX */
+@media(max-width:600px){
+.hero-title{
+font-size:2rem;
 }
 
 .product-card img{
-height:180px;
+height:260px;
 }
-
-}
-
-</style>
-<style>
-
-/* ===============================
-   GLOBAL SCROLL ANIMATIONS
-================================ */
-
-.fade-in{
-opacity:0;
-transform:translateY(30px);
-transition:all 1s ease;
-}
-
-.fade-in.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* ===============================
-   BUTTON SHINE EFFECT (GLOBAL)
-================================ */
-
-.buy-btn::before,
-.hero-btn::before{
-content:'';
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(
-90deg,
-transparent,
-rgba(255,255,255,.25),
-transparent
-);
-transition:.7s;
-}
-
-.buy-btn:hover::before,
-.hero-btn:hover::before{
-left:100%;
-}
-
-/* ===============================
-   INSTAGRAM SECTION
-================================ */
-
-.instagram{
-text-align:center;
-}
-
-.insta-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:15px;
-max-width:900px;
-margin:auto;
-}
-
-.insta-box{
-height:180px;
-background:rgba(255,255,255,.03);
-border:1px solid rgba(223,183,108,.12);
-border-radius:14px;
-backdrop-filter:blur(10px);
-transition:.4s ease;
-animation:pulseGlow 3s infinite;
-}
-
-.insta-box:hover{
-transform:scale(1.05);
-border-color:#dfb76c;
-box-shadow:0 0 25px rgba(223,183,108,.2);
-}
-
-@keyframes pulseGlow{
-0%{box-shadow:0 0 10px rgba(223,183,108,.1);}
-50%{box-shadow:0 0 20px rgba(223,183,108,.25);}
-100%{box-shadow:0 0 10px rgba(223,183,108,.1);}
-}
-
-/* ===============================
-   FOOTER
-================================ */
-
-footer{
-text-align:center;
-padding:50px 20px;
-border-top:1px solid rgba(223,183,108,.1);
-background:rgba(0,0,0,.6);
-backdrop-filter:blur(10px);
-}
-
-footer h3{
-font-family:'Cinzel',serif;
-color:#dfb76c;
-letter-spacing:4px;
-margin-bottom:10px;
-}
-
-footer p{
-color:#aaa;
-font-size:.9rem;
-}
-
-/* ===============================
-   SCROLLBAR (LUXURY TOUCH)
-================================ */
-
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-track{
-background:#0a0a0a;
-}
-
-::-webkit-scrollbar-thumb{
-background:#dfb76c;
-border-radius:10px;
-}
-
-/* ===============================
-   RESPONSIVE INSTAGRAM
-================================ */
-
-@media(max-width:768px){
-
-.insta-grid{
-grid-template-columns:1fr;
-}
-
 }
 
 </style>
+
+</body>
+</html>
