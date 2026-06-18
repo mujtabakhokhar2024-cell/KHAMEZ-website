@@ -70,92 +70,175 @@ padding:100px 6%;
 }
 
 nav{
+
 position:fixed;
 top:0;
 left:0;
 width:100%;
+
 padding:18px 6%;
+
 display:flex;
-justify-content:space-between;
+flex-direction:column;
 align-items:center;
-background:rgba(0,0,0,.65);
+
+background:rgba(0,0,0,.78);
+
 backdrop-filter:blur(15px);
+
 z-index:999;
+
+border-bottom:1px solid rgba(212,175,55,.12);
+
+}
+
+.nav-top{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+margin-bottom:15px;
+
+}
+
+.brand-logo{
+
+width:90px;
+height:auto;
+
+display:block;
+
+margin-bottom:10px;
+
 }
 
 .logo{
+
 font-family:'Cinzel',serif;
-letter-spacing:6px;
-font-size:1.4rem;
+
+letter-spacing:8px;
+
+font-size:1.6rem;
+
 animation:goldGlow 3s infinite;
+
 }
 
 .nav-links{
+
 display:flex;
-gap:12px;
+gap:15px;
+flex-wrap:wrap;
+justify-content:center;
+
 }
 
 .nav-links a{
-font-size:.68rem;
-padding:6px 12px;
+
+font-size:.72rem;
+
+padding:8px 16px;
+
 border:1px solid rgba(212,175,55,.3);
+
 color:var(--gold);
+
 text-decoration:none;
+
 letter-spacing:2px;
+
 transition:.3s;
+
 }
 
 .nav-links a:hover{
+
 background:var(--gold);
+
 color:black;
+
 }
 
 header{
-height:100vh;
+
+height:115vh;
+
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+
 text-align:center;
+
 background:
-linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.9)),
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.9)),
 url('image_6.png');
+
 background-size:cover;
 background-position:center;
+
 padding:20px;
+
 }
-  .hero-subtitle{
+
+.hero-subtitle{
+
 color:var(--gold);
+
 letter-spacing:6px;
+
 margin-bottom:20px;
+
 font-size:.9rem;
+
 }
 
 .hero-title{
+
 font-family:'Playfair Display',serif;
+
 font-size:clamp(2rem,5vw,4.5rem);
+
 max-width:900px;
+
 line-height:1.2;
+
 }
 
 .hero-btn{
+
 margin-top:40px;
+
 padding:16px 34px;
+
 border:1px solid var(--gold);
+
 color:var(--gold);
+
 text-decoration:none;
+
 transition:.4s;
+
 position:relative;
+
 overflow:hidden;
+
 }
 
 .hero-btn::before{
+
 content:'';
+
 position:absolute;
+
 top:0;
 left:-100%;
+
 width:100%;
 height:100%;
+
 background:
 linear-gradient(
 90deg,
@@ -163,7 +246,9 @@ transparent,
 rgba(255,255,255,.25),
 transparent
 );
+
 transition:.8s;
+
 }
 
 .hero-btn:hover::before{
@@ -171,8 +256,11 @@ left:100%;
 }
 
 .hero-btn:hover{
+
 background:var(--gold);
+
 color:black;
+
 }
 
 @keyframes goldGlow{
@@ -182,10 +270,13 @@ color:white;
 }
 
 50%{
+
 color:var(--gold);
+
 text-shadow:
 0 0 10px var(--gold),
 0 0 25px rgba(212,175,55,.5);
+
 }
 
 100%{
@@ -195,11 +286,17 @@ color:white;
 }
 
 .section-title{
+
 font-family:'Cinzel',serif;
+
 text-align:center;
+
 letter-spacing:8px;
+
 margin-bottom:70px;
+
 color:var(--gold);
+
 }
 
 </style>
@@ -210,12 +307,20 @@ color:var(--gold);
 
 <nav>
 
+<div class="nav-top">
+
+<img src="image_7.png" class="brand-logo">
+
 <h2 class="logo">KHAMEZ</h2>
+
+</div>
 
 <div class="nav-links">
 
 <a href="#">HOME</a>
+
 <a href="#products">COLLECTION</a>
+
 <a href="#footer">CONTACT</a>
 
 </div>
@@ -229,7 +334,7 @@ MAISON DE PARFUM EST. MMXXV
 </div>
 
 <h1 class="hero-title">
-Unveil Your Darkness With Khamez
+Luxury Fragrance For The Bold And Unforgettable
 </h1>
 
 <a href="#products" class="hero-btn">
@@ -267,7 +372,7 @@ display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
-margin-top:50px;
+margin-top:60px;
 ">
 
 <div class="feature-box">
@@ -288,8 +393,6 @@ LONG LASTING FRAGRANCE
 
 <style>
 
-/* FEATURES */
-
 .feature-box{
 
 border:1px solid #333;
@@ -309,6 +412,8 @@ transition:.4s;
 
 letter-spacing:2px;
 
+border-radius:10px;
+
 }
 
 .feature-box:hover{
@@ -325,6 +430,7 @@ box-shadow:
 }
 
 </style>
+
 <section>
 
 <h2 class="section-title">
@@ -369,12 +475,15 @@ Premium packaging and premium scent.
 
 <style>
 
-/* REVIEWS */
-
 .review-grid{
+
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
 gap:25px;
+
 }
 
 .review-card{
@@ -492,7 +601,7 @@ BUY NOW
 
 <!-- ETERNITY -->
 
-<div class="product-card">
+<div class="product-card eternity-card">
 
 <img src="image_2.png">
 
@@ -524,28 +633,24 @@ BUY NOW
 /* PRODUCT GRID */
 
 .product-grid{
+
 display:grid;
-grid-template-columns:repeat(2,minmax(250px,380px));
+
+grid-template-columns:320px 320px;
+
 justify-content:center;
-gap:25px;
+
+gap:30px;
+
 }
 
-.product-card:last-child{
-grid-column:1 / span 2;
-max-width:380px;
-margin:auto;
-}
+/* ETERNITY BELOW SMOKE */
 
-@media(max-width:768px){
+.eternity-card{
 
-.product-grid{
-grid-template-columns:1fr;
-}
+grid-column:1;
 
-.product-card:last-child{
-grid-column:auto;
-max-width:100%;
-}
+grid-row:2;
 
 }
 
@@ -568,6 +673,8 @@ border-radius:12px;
 
 transition:.4s;
 
+width:320px;
+
 }
 
 .product-card:hover{
@@ -582,7 +689,7 @@ box-shadow:
 
 }
 
-/* FLOATING BOTTLES */
+/* FLOATING PERFUME */
 
 @keyframes floatBottle{
 
@@ -591,7 +698,7 @@ transform:translateY(0);
 }
 
 50%{
-transform:translateY(-12px);
+transform:translateY(-6px);
 }
 
 100%{
@@ -603,26 +710,33 @@ transform:translateY(0);
 .product-card img{
 
 width:100%;
-height:140px;
+
+height:150px;
+
 object-fit:contain;
-padding:10px;
+
+padding:12px;
+
 background:#111;
 
 animation:floatBottle 5s ease-in-out infinite;
 
 }
 
-/* CONTENT */
-
 .product-content{
+
 padding:18px;
+
 text-align:center;
+
 }
 
 .product-content h3{
 
 font-family:'Cinzel',serif;
+
 letter-spacing:3px;
+
 margin-bottom:8px;
 
 }
@@ -630,10 +744,13 @@ margin-bottom:8px;
 .product-content p{
 
 color:#bdbdbd;
+
 font-size:.9rem;
 
 white-space:nowrap;
+
 overflow:hidden;
+
 text-overflow:ellipsis;
 
 margin-bottom:12px;
@@ -643,7 +760,9 @@ margin-bottom:12px;
 .price{
 
 font-family:'Cinzel',serif;
+
 color:var(--gold);
+
 margin-bottom:18px;
 
 }
@@ -706,6 +825,36 @@ color:black;
 
 }
 
+/* MOBILE */
+
+@media(max-width:768px){
+
+.product-grid{
+
+grid-template-columns:1fr;
+
+justify-items:center;
+
+}
+
+.eternity-card{
+
+grid-column:auto;
+
+grid-row:auto;
+
+}
+
+.product-card{
+
+width:100%;
+
+max-width:320px;
+
+}
+
+}
+
 </style>
 <section style="text-align:center;">
 
@@ -747,7 +896,7 @@ WhatsApp Order
 
 <style>
 
-/* INSTAGRAM GLOW */
+/* INSTAGRAM */
 
 .insta-link{
 
@@ -783,17 +932,17 @@ text-shadow:
 
 text-align:center;
 
-padding:60px 20px;
+padding:70px 20px;
 
 border-top:1px solid #222;
 
 color:#888;
 
-margin-top:80px;
+margin-top:100px;
 
 }
 
-/* WHATSAPP */
+/* WHATSAPP BUTTON */
 
 .whatsapp{
 
@@ -829,7 +978,7 @@ transform:scale(1.05);
 
 }
 
-/* SCROLL ANIMATION */
+/* SCROLL REVEAL */
 
 section,
 .product-card,
@@ -860,8 +1009,12 @@ transform:translateY(0);
 font-size:2rem;
 }
 
+.brand-logo{
+width:70px;
+}
+
 .logo{
-font-size:1.1rem;
+font-size:1.2rem;
 }
 
 .nav-links{
@@ -869,13 +1022,19 @@ gap:8px;
 }
 
 .nav-links a{
+
 font-size:.65rem;
+
 padding:6px 10px;
+
 }
 
 .whatsapp{
+
 padding:14px 18px;
+
 font-size:.9rem;
+
 }
 
 }
