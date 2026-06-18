@@ -29,6 +29,7 @@ box-sizing:border-box;
 }
 
 body{
+
 background:
 linear-gradient(
 180deg,
@@ -37,10 +38,31 @@ linear-gradient(
 #0d0d0d 70%,
 #050505 100%
 );
+
+background-size:200% 200%;
+animation:bgMove 15s ease infinite;
+
 color:white;
 font-family:'Cormorant Garamond',serif;
 scroll-behavior:smooth;
 overflow-x:hidden;
+
+}
+
+@keyframes bgMove{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
 }
 
 section{
@@ -70,12 +92,12 @@ animation:goldGlow 3s infinite;
 
 .nav-links{
 display:flex;
-gap:15px;
+gap:12px;
 }
 
 .nav-links a{
-font-size:.75rem;
-padding:8px 14px;
+font-size:.68rem;
+padding:6px 12px;
 border:1px solid rgba(212,175,55,.3);
 color:var(--gold);
 text-decoration:none;
@@ -102,8 +124,7 @@ background-size:cover;
 background-position:center;
 padding:20px;
 }
-
-.hero-subtitle{
+  .hero-subtitle{
 color:var(--gold);
 letter-spacing:6px;
 margin-bottom:20px;
@@ -124,6 +145,29 @@ border:1px solid var(--gold);
 color:var(--gold);
 text-decoration:none;
 transition:.4s;
+position:relative;
+overflow:hidden;
+}
+
+.hero-btn::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.25),
+transparent
+);
+transition:.8s;
+}
+
+.hero-btn:hover::before{
+left:100%;
 }
 
 .hero-btn:hover{
@@ -132,12 +176,22 @@ color:black;
 }
 
 @keyframes goldGlow{
-0%{color:white;}
+
+0%{
+color:white;
+}
+
 50%{
 color:var(--gold);
-text-shadow:0 0 20px var(--gold);
+text-shadow:
+0 0 10px var(--gold),
+0 0 25px rgba(212,175,55,.5);
 }
-100%{color:white;}
+
+100%{
+color:white;
+}
+
 }
 
 .section-title{
@@ -232,6 +286,45 @@ LONG LASTING FRAGRANCE
 
 </section>
 
+<style>
+
+/* FEATURES */
+
+.feature-box{
+
+border:1px solid #333;
+
+padding:18px 25px;
+
+background:
+linear-gradient(
+145deg,
+#2a2a2a,
+#111111
+);
+
+color:#d6d6d6;
+
+transition:.4s;
+
+letter-spacing:2px;
+
+}
+
+.feature-box:hover{
+
+transform:translateY(-5px);
+
+border-color:var(--gold);
+
+color:var(--gold);
+
+box-shadow:
+0 0 15px rgba(212,175,55,.15);
+
+}
+
+</style>
 <section>
 
 <h2 class="section-title">
@@ -276,31 +369,6 @@ Premium packaging and premium scent.
 
 <style>
 
-/* FEATURES */
-
-.feature-box{
-border:1px solid #333;
-padding:18px 25px;
-background:
-linear-gradient(
-145deg,
-#2a2a2a,
-#111111
-);
-color:#d6d6d6;
-transition:.4s;
-letter-spacing:2px;
-}
-
-.feature-box:hover{
-transform:translateY(-5px);
-border-color:var(--gold);
-color:var(--gold);
-
-box-shadow:
-0 0 15px rgba(212,175,55,.15);
-}
-
 /* REVIEWS */
 
 .review-grid{
@@ -310,6 +378,7 @@ gap:25px;
 }
 
 .review-card{
+
 background:
 linear-gradient(
 145deg,
@@ -318,8 +387,13 @@ linear-gradient(
 );
 
 padding:25px;
+
 border:1px solid #222;
+
 transition:.4s;
+
+border-radius:12px;
+
 }
 
 .review-card:hover{
@@ -330,13 +404,19 @@ border-color:var(--gold);
 
 box-shadow:
 0 0 20px rgba(212,175,55,.15);
+
 }
 
 .review-card p{
+
 margin-top:15px;
+
 color:#bdbdbd;
+
 line-height:1.8;
+
 font-size:1rem;
+
 }
 
 </style>
@@ -370,9 +450,7 @@ THE COLLECTION
 
 <h3>SMOKE</h3>
 
-<p>
-Dark Woody Luxury Fragrance.
-</p>
+<p>Dark Woody Fragrance</p>
 
 <h4 class="price">
 PKR 2,499
@@ -397,9 +475,7 @@ BUY NOW
 
 <h3>SECRET</h3>
 
-<p>
-Elegant Floral Luxury Fragrance.
-</p>
+<p>Elegant Floral Fragrance</p>
 
 <h4 class="price">
 PKR 2,499
@@ -424,9 +500,7 @@ BUY NOW
 
 <h3>ETERNITY</h3>
 
-<p>
-Fresh Aquatic Luxury Fragrance.
-</p>
+<p>Fresh Aquatic Fragrance</p>
 
 <h4 class="price">
 PKR 2,999
@@ -444,23 +518,33 @@ BUY NOW
 </div>
 
 </section>
+
 <style>
 
 /* PRODUCT GRID */
 
 .product-grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:30px;
-padding:0 6%;
+grid-template-columns:repeat(2,minmax(250px,380px));
+justify-content:center;
+gap:25px;
 }
 
-/* MOBILE */
+.product-card:last-child{
+grid-column:1 / span 2;
+max-width:380px;
+margin:auto;
+}
 
 @media(max-width:768px){
 
 .product-grid{
 grid-template-columns:1fr;
+}
+
+.product-card:last-child{
+grid-column:auto;
+max-width:100%;
 }
 
 }
@@ -480,13 +564,11 @@ border:1px solid #2a2a2a;
 
 overflow:hidden;
 
-transition:.4s;
-
 border-radius:12px;
 
-}
+transition:.4s;
 
-/* LUXURY HOVER */
+}
 
 .product-card:hover{
 
@@ -496,79 +578,83 @@ border-color:var(--gold);
 
 box-shadow:
 0 0 20px rgba(212,175,55,.2),
-0 0 40px rgba(212,175,55,.12),
-0 0 70px rgba(212,175,55,.08);
+0 0 40px rgba(212,175,55,.12);
 
 }
 
-/* IMAGE */
+/* FLOATING BOTTLES */
+
+@keyframes floatBottle{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-12px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
 
 .product-card img{
 
 width:100%;
-
-height:180px;
-
+height:140px;
 object-fit:contain;
-
-padding:15px;
-
+padding:10px;
 background:#111;
+
+animation:floatBottle 5s ease-in-out infinite;
 
 }
 
 /* CONTENT */
 
 .product-content{
-padding:22px;
+padding:18px;
 text-align:center;
 }
 
 .product-content h3{
 
 font-family:'Cinzel',serif;
-
-letter-spacing:4px;
-
-margin-bottom:10px;
-
-color:white;
+letter-spacing:3px;
+margin-bottom:8px;
 
 }
 
 .product-content p{
 
 color:#bdbdbd;
+font-size:.9rem;
 
-font-size:1rem;
+white-space:nowrap;
+overflow:hidden;
+text-overflow:ellipsis;
 
-margin-bottom:15px;
+margin-bottom:12px;
 
 }
-
-/* PRICE */
 
 .price{
 
 font-family:'Cinzel',serif;
-
 color:var(--gold);
-
-font-size:1.2rem;
-
-margin-bottom:20px;
+margin-bottom:18px;
 
 }
-
-/* BUY BUTTON */
 
 .buy-btn{
 
 display:block;
 
-text-decoration:none;
+padding:12px;
 
-padding:14px;
+text-decoration:none;
 
 border:1px solid var(--gold);
 
@@ -584,8 +670,6 @@ letter-spacing:2px;
 
 }
 
-/* SHIMMER EFFECT */
-
 .buy-btn::before{
 
 content:'';
@@ -593,15 +677,12 @@ content:'';
 position:absolute;
 
 top:0;
-
 left:-100%;
 
 width:100%;
-
 height:100%;
 
 background:
-
 linear-gradient(
 90deg,
 transparent,
@@ -622,9 +703,6 @@ left:100%;
 background:var(--gold);
 
 color:black;
-
-box-shadow:
-0 0 20px rgba(212,175,55,.3);
 
 }
 
@@ -654,13 +732,11 @@ class="insta-link">
 
 </section>
 
-
 <footer id="footer" class="footer">
 
 Luxury. Darkness. Identity. © KHAMEZ
 
 </footer>
-
 
 <a href="https://wa.me/923224153466"
 class="whatsapp">
@@ -669,10 +745,9 @@ WhatsApp Order
 
 </a>
 
-
 <style>
 
-/* INSTAGRAM */
+/* INSTAGRAM GLOW */
 
 .insta-link{
 
@@ -684,14 +759,21 @@ font-size:1.2rem;
 
 letter-spacing:2px;
 
-transition:.4s;
+animation:instaGlow 2.5s infinite;
 
 }
 
-.insta-link:hover{
+@keyframes instaGlow{
 
+0%,100%{
+text-shadow:none;
+}
+
+50%{
 text-shadow:
-0 0 15px rgba(212,175,55,.7);
+0 0 15px rgba(212,175,55,.8),
+0 0 30px rgba(212,175,55,.4);
+}
 
 }
 
@@ -718,7 +800,6 @@ margin-top:80px;
 position:fixed;
 
 right:25px;
-
 bottom:25px;
 
 background:#25D366;
@@ -792,10 +873,14 @@ font-size:.65rem;
 padding:6px 10px;
 }
 
+.whatsapp{
+padding:14px 18px;
+font-size:.9rem;
+}
+
 }
 
 </style>
-
 
 <script>
 
