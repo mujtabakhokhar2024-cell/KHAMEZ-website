@@ -37,7 +37,8 @@ scroll-behavior:smooth;
 section{
 padding:90px 20px;
 }
-  nav{
+
+nav{
 position:fixed;
 top:0;
 left:0;
@@ -54,24 +55,15 @@ border-bottom:1px solid rgba(212,175,55,.15);
 
 .nav-top{
 display:flex;
-flex-direction:column;
-align-items:center;
 justify-content:center;
+align-items:center;
 margin-bottom:8px;
 }
 
 .brand-logo{
-width:220px;
+width:180px;
 height:auto;
 display:block;
-}
-
-.logo-text{
-color:var(--gold);
-font-family:'Cinzel',serif;
-letter-spacing:3px;
-font-size:0.9rem;
-margin-top:5px;
 }
 
 .nav-links{
@@ -84,7 +76,7 @@ justify-content:center;
 .nav-links a{
 text-decoration:none;
 color:var(--gold);
-border:1px solid rgba(212175,55,.25);
+border:1px solid rgba(212,175,55,.25);
 padding:7px 14px;
 font-size:.7rem;
 letter-spacing:2px;
@@ -95,7 +87,8 @@ transition:.3s;
 background:var(--gold);
 color:black;
 }
-  header{
+
+header{
 height:100vh;
 display:flex;
 flex-direction:column;
@@ -103,15 +96,10 @@ justify-content:center;
 align-items:center;
 text-align:center;
 padding:20px;
-
-/* NEW BACKGROUND IMAGE */
-background:
-linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.92)),
-url("image_6.png");
-
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+background:linear-gradient(
+rgba(0,0,0,.92),
+rgba(0,0,0,.97)
+);
 }
 
 .hero-subtitle{
@@ -142,7 +130,8 @@ transition:.4s;
 background:var(--gold);
 color:black;
 }
-  .section-title{
+
+.section-title{
 text-align:center;
 font-family:'Cinzel',serif;
 letter-spacing:5px;
@@ -152,206 +141,582 @@ font-size:1.3rem;
 }
 
 .feature-box{
+
 border:1px solid #222;
+
 padding:16px 20px;
+
 background:#0c0c0c;
+
 border-radius:10px;
+
 color:#d0d0d0;
+
 letter-spacing:1px;
+
 transition:.4s;
+
 }
 
 .feature-box:hover{
+
 transform:translateY(-5px);
+
 border-color:var(--gold);
+
 color:var(--gold);
-}
-  .review-grid{
-display:grid;
-grid-template-columns:1fr;
-gap:20px;
-}
 
-.review-card{
-background:#0c0c0c;
-border:1px solid #222;
-padding:25px;
-border-radius:12px;
-transition:.4s;
-text-align:center;
-}
-
-.review-card:hover{
-transform:translateY(-5px);
-border-color:var(--gold);
-}
-
-.review-card p{
-margin-top:12px;
-color:#bdbdbd;
-line-height:1.8;
-font-size:1rem;
-}
-  .product-grid{
-display:grid;
-grid-template-columns:repeat(2, 1fr);
-gap:15px;
-}
-
-.product-card{
-background:#0c0c0c;
-border:1px solid #222;
-border-radius:12px;
-overflow:hidden;
-transition:.4s;
-}
-
-.product-card:hover{
-border-color:var(--gold);
-transform:translateY(-6px);
-}
-
-.product-card img{
-width:100%;
-height:130px;
-object-fit:contain;
-padding:10px;
-background:#080808;
-}
-
-.product-content{
-padding:12px;
-text-align:center;
-}
-
-.product-content h3{
-font-family:'Cinzel',serif;
-font-size:1rem;
-letter-spacing:2px;
-white-space:nowrap;
-}
-
-.product-content p{
-font-size:.75rem;
-color:#bdbdbd;
-white-space:nowrap;
-overflow:hidden;
-text-overflow:ellipsis;
-margin:8px 0;
-}
-
-.price{
-color:var(--gold);
-margin-bottom:10px;
-}
-
-.buy-btn{
-display:block;
-padding:10px;
-text-decoration:none;
-border:1px solid var(--gold);
-color:var(--gold);
-font-size:.75rem;
-letter-spacing:1px;
-transition:.3s;
-}
-
-.buy-btn:hover{
-background:var(--gold);
-color:black;
-}
-  .insta-link{
-color:#d4af37;
-text-decoration:none;
-font-size:1.1rem;
-letter-spacing:2px;
-}
-
-.footer{
-text-align:center;
-padding:50px 20px;
-border-top:1px solid #222;
-color:#777;
-margin-top:60px;
-}
-
-.whatsapp{
-position:fixed;
-right:15px;
-bottom:15px;
-background:#25D366;
-color:white;
-text-decoration:none;
-padding:12px 18px;
-border-radius:40px;
-font-weight:bold;
-font-size:.85rem;
-z-index:999;
-}
-
-/* SCROLL ANIMATION */
-section,
-.product-card,
-.review-card,
-.feature-box{
-opacity:0;
-transform:translateY(30px);
-transition:1s;
-}
-
-.show{
-opacity:1;
-transform:translateY(0);
 }
 
 </style>
+
 </head>
 
 <body>
 
 <nav>
-  <div class="nav-top">
-    <img src="image_7.png" class="brand-logo">
-    <div class="logo-text">KHAMEZ</div>
-  </div>
 
-  <div class="nav-links">
-    <a href="#">HOME</a>
-    <a href="#products">COLLECTION</a>
-    <a href="#footer">CONTACT</a>
-  </div>
+<div class="nav-top">
+
+<img src="image_7.png" class="brand-logo">
+
+</div>
+
+<div class="nav-links">
+
+<a href="#">HOME</a>
+
+<a href="#products">COLLECTION</a>
+
+<a href="#footer">CONTACT</a>
+
+</div>
+
 </nav>
 
 <header>
-  <div class="hero-subtitle">
-    MAISON DE PARFUM EST. MMXXV
-  </div>
 
-  <h1 class="hero-title">
-    Luxury Fragrance For The Bold And Unforgettable
-  </h1>
+<div class="hero-subtitle">
+MAISON DE PARFUM EST. MMXXV
+</div>
 
-  <a href="#products" class="hero-btn">
-    EXPLORE COLLECTION
-  </a>
+<h1 class="hero-title">
+Luxury Fragrance For The Bold And Unforgettable
+</h1>
+
+<a href="#products" class="hero-btn">
+EXPLORE COLLECTION
+</a>
+
 </header>
 
-<!-- YOUR OTHER SECTIONS REMAIN SAME (story, reviews, products, footer) -->
+<section class="story">
+
+<h2 class="section-title">
+THE HOUSE OF KHAMEZ
+</h2>
+
+<p style="
+max-width:350px;
+margin:auto;
+text-align:center;
+line-height:1.9;
+color:#bdbdbd;
+font-size:1.1rem;
+">
+
+KHAMEZ is more than fragrance.
+It is identity captured in a bottle.
+
+Inspired by mystery, elegance and power,
+every scent is crafted to leave a lasting impression.
+
+Luxury. Darkness. Identity.
+
+</p>
+
+<div style="
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:40px;
+">
+
+<div class="feature-box">
+FREE DELIVERY
+</div>
+
+<div class="feature-box">
+CASH ON DELIVERY
+</div>
+
+<div class="feature-box">
+LONG LASTING FRAGRANCE
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">
+CUSTOMER REVIEWS
+</h2>
+
+<div class="review-grid">
+
+<div class="review-card">
+
+★★★★★
+
+<p>
+Amazing fragrance and long lasting performance.
+</p>
+
+</div>
+
+<div class="review-card">
+
+★★★★★
+
+<p>
+Smoke gets compliments everywhere I go.
+</p>
+
+</div>
+
+<div class="review-card">
+
+★★★★★
+
+<p>
+Premium packaging and premium scent.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.review-grid{
+
+display:grid;
+
+grid-template-columns:1fr;
+
+gap:20px;
+
+}
+
+.review-card{
+
+background:#0c0c0c;
+
+border:1px solid #222;
+
+padding:25px;
+
+border-radius:12px;
+
+transition:.4s;
+
+text-align:center;
+
+}
+
+.review-card:hover{
+
+transform:translateY(-5px);
+
+border-color:var(--gold);
+
+}
+
+.review-card p{
+
+margin-top:12px;
+
+color:#bdbdbd;
+
+line-height:1.8;
+
+font-size:1rem;
+
+}
+
+</style>
+
+<section id="products">
+
+<p style="
+text-align:center;
+color:#888;
+letter-spacing:3px;
+font-style:italic;
+margin-bottom:20px;
+">
+Every Fragrance Tells A Story
+</p>
+
+<h2 class="section-title">
+THE COLLECTION
+</h2>
+
+<div class="product-grid">
+
+<!-- SMOKE -->
+
+<div class="product-card">
+
+<img src="image.png">
+
+<div class="product-content">
+
+<h3>SMOKE</h3>
+
+<p>Dark Woody Fragrance</p>
+
+<h4 class="price">PKR 2,499</h4>
+
+<a href="https://wa.me/923224153466?text=I%20want%20Smoke"
+class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- SECRET -->
+
+<div class="product-card">
+
+<img src="image_3.png">
+
+<div class="product-content">
+
+<h3>SECRET</h3>
+
+<p>Elegant Floral Fragrance</p>
+
+<h4 class="price">PKR 2,499</h4>
+
+<a href="https://wa.me/923224153466?text=I%20want%20Secret"
+class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+<!-- ETERNITY -->
+
+<div class="product-card eternity-card">
+
+<img src="image_2.png">
+
+<div class="product-content">
+
+<h3>ETERNITY</h3>
+
+<p>Fresh Aquatic Fragrance</p>
+
+<h4 class="price">PKR 2,999</h4>
+
+<a href="https://wa.me/923224153466?text=I%20want%20Eternity"
+class="buy-btn">
+BUY NOW
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<style>
+
+.product-grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+justify-content:center;
+
+}
+
+.eternity-card{
+
+grid-column:1;
+
+}
+
+.product-card{
+
+background:#0c0c0c;
+
+border:1px solid #222;
+
+border-radius:12px;
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+.product-card:hover{
+
+border-color:var(--gold);
+
+transform:translateY(-6px);
+
+}
+
+.product-card img{
+
+width:100%;
+
+height:130px;
+
+object-fit:contain;
+
+padding:10px;
+
+background:#080808;
+
+}
+
+.product-content{
+
+padding:12px;
+
+text-align:center;
+
+}
+
+.product-content h3{
+
+font-family:'Cinzel',serif;
+
+font-size:1rem;
+
+letter-spacing:2px;
+
+white-space:nowrap;
+
+}
+
+.product-content p{
+
+font-size:.75rem;
+
+color:#bdbdbd;
+
+white-space:nowrap;
+
+overflow:hidden;
+
+text-overflow:ellipsis;
+
+margin:8px 0;
+
+}
+
+.price{
+
+color:var(--gold);
+
+margin-bottom:10px;
+
+}
+
+.buy-btn{
+
+display:block;
+
+padding:10px;
+
+text-decoration:none;
+
+border:1px solid var(--gold);
+
+color:var(--gold);
+
+font-size:.75rem;
+
+letter-spacing:1px;
+
+transition:.3s;
+
+}
+
+.buy-btn:hover{
+
+background:var(--gold);
+
+color:black;
+
+}
+
+</style>
+<section style="text-align:center;">
+
+<h2 class="section-title">
+FOLLOW KHAMEZ
+</h2>
+
+<p style="
+color:#bdbdbd;
+margin-bottom:20px;
+font-size:1rem;
+">
+
+Discover new releases and luxury content.
+
+</p>
+
+<a href="https://instagram.com/khamez_house"
+class="insta-link">
+
+@khamez_house
+
+</a>
+
+</section>
+
+<footer id="footer" class="footer">
+
+Luxury. Darkness. Identity. © KHAMEZ
+
+</footer>
+
+<a href="https://wa.me/923224153466"
+class="whatsapp">
+
+ORDER NOW
+
+</a>
+
+<style>
+
+/* INSTAGRAM */
+
+.insta-link{
+
+color:#d4af37;
+
+text-decoration:none;
+
+font-size:1.1rem;
+
+letter-spacing:2px;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+text-align:center;
+
+padding:50px 20px;
+
+border-top:1px solid #222;
+
+color:#777;
+
+margin-top:60px;
+
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+
+position:fixed;
+
+right:15px;
+bottom:15px;
+
+background:#25D366;
+
+color:white;
+
+text-decoration:none;
+
+padding:12px 18px;
+
+border-radius:40px;
+
+font-weight:bold;
+
+font-size:.85rem;
+
+z-index:999;
+
+}
+
+/* SCROLL EFFECT */
+
+section,
+.product-card,
+.review-card,
+.feature-box{
+
+opacity:0;
+
+transform:translateY(30px);
+
+transition:1s;
+
+}
+
+.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+</style>
 
 <script>
+
 const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
 });
 
 document.querySelectorAll(
 'section,.product-card,.review-card,.feature-box'
 ).forEach(el => {
-  observer.observe(el);
+
+observer.observe(el);
+
 });
+
 </script>
 
 </body>
